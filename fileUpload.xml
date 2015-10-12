@@ -1,11 +1,7 @@
 <!-- For Jetty Deployment -->
 <Configure class="org.eclipse.jetty.webapp.WebAppContext">
- 
-  <Set name="contextPath">/fu</Set>
-  <Set name="war">fileUpload.war</Set>
- 
-  <Call name="setAttribute">
-    <Arg>org.eclipse.jetty.webapp.basetempdir</Arg>
-    <Arg>/opt/dev/jetty/apps/webapps/work/fileUpload</Arg>
-  </Call>
+  <Set name="contextPath">/fu</Set>
+  <Set name="war"><Property name="jetty.webapps" default="."/>/fileUpload.war</Set>	
+  <Set name="extractWAR">true</Set>
+  <Set name="copyWebDir">false</Set>
 </Configure>
